@@ -1,12 +1,13 @@
-{ config, pkgs, ... }:
+{ config, home-manager, pkgs, ... }:
 {
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
     ./sh.nix
     ./git.nix
+    ./wezterm/wezterm.nix
   ];
 
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
   home.username = "derek";
   home.homeDirectory = "/home/derek";
 
@@ -21,11 +22,10 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-
+  home.packages = with pkgs; [
+    google-chrome
+    fira-code-nerdfont
+    
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
