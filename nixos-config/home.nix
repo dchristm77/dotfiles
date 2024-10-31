@@ -6,6 +6,7 @@
     ./sh.nix
     ./git.nix
     ./wezterm/wezterm.nix
+    ./dunst.nix
   ];
 
   home.username = "derek";
@@ -26,7 +27,6 @@
   # environment.
   home.packages = with pkgs; [
     google-chrome
-    fira-code-nerdfont
     wl-clipboard
     slurp
     grim
@@ -35,7 +35,7 @@
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -44,6 +44,8 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  fonts.fontconfig.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

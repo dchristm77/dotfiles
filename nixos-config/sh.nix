@@ -11,7 +11,7 @@ in
     enable = true;
     shellAliases = myAliases;
     autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
+    syntaxHighlighting.enable = false;
     plugins = [
       {
         name = "vi-mode";
