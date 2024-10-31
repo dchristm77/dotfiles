@@ -11,6 +11,8 @@
   home.username = "derek";
   home.homeDirectory = "/home/derek";
 
+  services.cliphist.enable = true;
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -25,6 +27,9 @@
   home.packages = with pkgs; [
     google-chrome
     fira-code-nerdfont
+    wl-clipboard
+    slurp
+    grim
     
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -73,6 +78,7 @@
   #
   home.sessionVariables = {
     EDITOR = "vim";
+    VISUAL = "vim";
   };
 
   # Let Home Manager install and manage itself.
