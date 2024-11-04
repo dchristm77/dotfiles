@@ -10,7 +10,7 @@ in
   programs.zsh = {
     enable = true;
     shellAliases = myAliases;
-    autosuggestion.enable = true;
+    autosuggestion.enable = false;
     syntaxHighlighting.enable = false;
     plugins = [
       {

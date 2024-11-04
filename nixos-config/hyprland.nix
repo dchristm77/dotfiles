@@ -1,4 +1,3 @@
-
 { inputs, config, pkgs, ... }:
 {
   wayland.windowManager.hyprland = {
@@ -8,14 +7,14 @@
     settings = {
       "$terminal" = "wezterm";
       "$mod" = "SUPER";
-
+      "$menu" = "wofi --show drun";
       monitor = [ ",prefered,auto,1" ];
       
       general = {
         gaps_in = 5;
         gaps_out = 5;
         border_size = 2;
-        layout = "master";
+        layout = "dwindle";
         allow_tearing = true;
       };
     
@@ -24,9 +23,11 @@
         follow_mouse = true;
         touchpad = {
           natural_scroll = true;
+          disable_while_typing = true;
         };
         accel_profile = "flat";
         sensitivity = 0;
+	kb_options = "caps:ctrl";
       };
     
       decoration = {
@@ -105,7 +106,8 @@
 
       bind = [
         "$mod, t, exec, $terminal"
-        "$mod , c, exec, google-chrome-stable" 
+        "$mod, c, exec, google-chrome-stable" 
+        "$mod, r, exec, $menu"
         "$mod SHIFT, e, exit" 
         "$mod SHIFT, q, killactive"
         "$mod SHIFT, e, exit"
@@ -169,6 +171,15 @@
         "$mod, mouse:273, resizewindow"
       ];
 
+      bindel = [
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ];
+
+      bindl = [
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      ];
+
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
@@ -185,6 +196,7 @@
       exec-once = [
         "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"
         "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"
+        "${pkgs.waybar}/bin/waybar"
       ];
     };
   };

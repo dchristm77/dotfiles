@@ -6,7 +6,11 @@
     ./sh.nix
     ./git.nix
     ./wezterm/wezterm.nix
-    ./dunst.nix
+#    ./dunst.nix
+    ./mako.nix
+    ./basic-vim.nix
+    ./wofi.nix
+    ./waybar.nix
   ];
 
   home.username = "derek";
@@ -30,12 +34,13 @@
     wl-clipboard
     slurp
     grim
+    font-awesome
     
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "FiraMono" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
