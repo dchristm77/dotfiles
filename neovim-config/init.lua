@@ -22,7 +22,12 @@ require('lazy').setup {
   require 'plugins.telescope',
   require 'plugins.lsp',
   require 'plugins.autocompletion',
-  require 'plugins.none-ls',
   require 'plugins.which-key',
   require 'plugins.gitsigns',
+  require 'plugins.alpha',
+  require 'plugins.indent-blankline',
+  require 'plugins.misc',
+  require 'plugins.vim-tmux-navigator',
+  require 'plugins.conform',
+  require 'plugins.conjure',
 }

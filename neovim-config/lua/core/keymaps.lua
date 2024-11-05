@@ -41,16 +41,16 @@ vim.keymap.set('n', '<leader>x', ':bdelete!<CR>', opts) -- close buffer
 vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
 
 -- Window management
---vim.keymap.set('n', '<leader>|', '<C-w>v', opts) -- split window vertically
---vim.keymap.set('n', '<leader>-', '<C-w>s', opts) -- split window horizontally
---vim.keymap.set('n', '<leader>se', '<C-w>=', opts) -- make split windows equal width & height
---vim.keymap.set('n', '<leader>xs', ':close<CR>', opts) -- close current split window
+vim.keymap.set('n', '<leader>|', '<C-w>v', opts) -- split window vertically
+vim.keymap.set('n', '<leader>-', '<C-w>s', opts) -- split window horizontally
+vim.keymap.set('n', '<leader>se', '<C-w>=', opts) -- make split windows equal width & height
+vim.keymap.set('n', '<leader>xs', ':close<CR>', opts) -- close current split window
 
 -- Navigate between splits
---vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', opts)
---vim.keymap.set('n', '<C-j>', ':wincmd j<CR>', opts)
---vim.keymap.set('n', '<C-h>', ':wincmd h<CR>', opts)
---vim.keymap.set('n', '<C-l>', ':wincmd l<CR>', opts)
+vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', opts)
+vim.keymap.set('n', '<C-j>', ':wincmd j<CR>', opts)
+vim.keymap.set('n', '<C-h>', ':wincmd h<CR>', opts)
+vim.keymap.set('n', '<C-l>', ':wincmd l<CR>', opts)
 
 -- Tabs
 --vim.keymap.set('n', '<leader>to', ':tabnew<CR>', opts) -- open new tab
@@ -59,7 +59,7 @@ vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
 --vim.keymap.set('n', '<leader>tp', ':tabp<CR>', opts) --  go to previous tab
 
 -- Toggle line wrapping
---vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', opts)
+vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', opts)
 
 -- Stay in indent mode
 vim.keymap.set('v', '<', '<gv', opts)
@@ -74,3 +74,13 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
