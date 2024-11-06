@@ -30,4 +30,6 @@ require('lazy').setup {
   require 'plugins.vim-tmux-navigator',
   require 'plugins.conform',
   require 'plugins.conjure',
+  require 'plugins.neogit',
+  require 'plugins.render-markdown',
 }
