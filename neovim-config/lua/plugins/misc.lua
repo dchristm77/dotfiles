@@ -4,14 +4,6 @@ return {
     -- Detect tabstop and shiftwidth automatically
     'tpope/vim-sleuth',
   },
-  -- {
-  --   -- Powerful Git integration for Vim
-  --   'tpope/vim-fugitive',
-  -- },
-  -- {
-  --   -- GitHub integration for vim-fugitive
-  --   'tpope/vim-rhubarb',
-  -- },
   {
     -- Highlight todo, notes, etc in comments
     'folke/todo-comments.nvim',
@@ -25,5 +17,10 @@ return {
     config = function()
       require('colorizer').setup()
     end,
+  },
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    opts = {},
   },
 }
