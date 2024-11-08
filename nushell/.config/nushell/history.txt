@@ -1,0 +1,73 @@
+ls
+ls | where type = file
+nvim ~/.config/nushell/env.nu
+nvim ~/.config/nushell/config.nu
+exit
+ls
+git status
+cd projects/personal/dotfiles/
+ll
+ls
+git status
+ll
+alias ll='ls -al'
+alias ll = 'ls -al'
+alias ll = ls -al
+ll
+gs
+g 
+ll
+tree
+ls **/*
+ls **
+ls **/**
+ls **/* 
+man ls
+help ls
+ls -a **/*
+ll ~/.config/
+mkdir -p nushell/.config/nushell
+help mkdir
+mkdir nushell/.config/nushell
+help cp
+ls -a ~/.config
+cp -pr --preserve [ mode timestamps ] ~/.config/nushell/* ./nushell/.config/nushell/
+ll **/*
+ll
+stow nushell
+stow nushell --adopt
+ll ~/.config/
+ll
+ls -a ~/.config
+ll
+stow nushell
+ls -a ~/.config
+ll
+cd nushell/
+ll
+cd .config
+ll
+cd nushell/
+ll
+cat config.nu
+cd
+cd .config
+ll
+ls -a
+exit
+gstat
+help gstat
+gstat --help
+nu_plugin_gstat --version
+which nu_plugin_gstat
+cd
+vim .config/nushell/config.nu
+which nu_plugin_gstat
+plugin add /run/current-system/sw/bin/nu_plugin_gstat
+plugin use gstat
+cd projects/personal/dotfiles/
+ll
+gstat  
+ll
+ls -a
+git status
