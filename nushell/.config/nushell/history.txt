@@ -71,3 +71,60 @@ gstat
 ll
 ls -a
 git status
+git add .
+gstat
+git status
+git commit -m"added nushell"
+git push
+git status
+exit
+gstat
+rg gstat
+plugin list
+shells
+ps
+cd
+ll
+ls 
+ls -a
+ls -a | where name ~= posh
+ls -a | where name ==~ posh
+help compare
+ls -a *posh*
+ls -a *Posh*
+rg -i posh
+ls -a | where name =~ posh
+cd .config
+ll
+ls -a
+cd ohmyposh/
+ll
+ls -a
+which oh-my-posh
+$nu.config-path
+brew list
+brew --prefix oh-my-posh
+ll
+ls -a
+alias ll = ls -a 
+ll
+oh-my-posh init nu --config ./zen.toml
+ll
+cd 
+ll
+./.oh-my-posh.nu
+bat .oh-my-posh.nu
+mv .oh-my-posh.nu .config/nushell/oh-my-posh.nu
+ll .config/nushell/
+mv .config/nushell/oh-my-posh.nu ~/projects/personal/dotfiles/nushell/.config/nushell/oh-my-posh.nu
+cd projects/personal/dotfiles/
+ll
+stow nushell
+ll ~/.config/nushell/
+cat ~/.config/nushell/plugin.msgpackz
+ll
+mv ~/.config/nushell/plugin.msgpackz ./nushell/.config/nushell/
+stow nushell
+ll ~/.config/nushell/
+ll
+git status
