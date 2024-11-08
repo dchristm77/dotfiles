@@ -896,3 +896,5 @@ $env.config = {
         }
     ]
 }
+
+source ./oh-my-posh.nu

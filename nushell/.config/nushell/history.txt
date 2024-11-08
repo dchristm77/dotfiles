@@ -128,3 +128,13 @@ stow nushell
 ll ~/.config/nushell/
 ll
 git status
+git add .
+git status
+git commit -m"further nushell changes"
+git push
+git status
+exit
+vim nushell/.config/nushell/config.nu
+exit
+ls
+gstat
