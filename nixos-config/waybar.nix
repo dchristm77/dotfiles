@@ -10,7 +10,7 @@ in
       topBar = {
         layer = "top";
         position = "top";
-        height = 35;
+        height = 30;
         spacing = 4;
         modules-left = [
           "hyprland/workspaces"
@@ -44,7 +44,7 @@ in
         };
         
         "clock" = {
-          "format" = "{:%a %I:%M:%S %p %F}";
+          "format" = "{:%a %I:%M %p %F}";
           "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           "format-alt" = "{:%Y-%m-%d}";
         };
@@ -69,6 +69,19 @@ in
           "format-linked" = "{ifname} (No IP) 󰱓";
           "format-disconnected" = "Disconnected 󰅛";
           "format-alt" = "{ifname}: {ipaddr}/{cidr}";
+        };
+
+        "custom/power" = {
+          "format" = "⏻ ";
+          "tooltip" = false;
+          "menu" = "on-click";
+          "menu-file" = "$HOME/.config/waybar/power_menu.xml";
+          "menu-actions" = {
+              "shutdown" = "shutdown";
+              "reboot" = "reboot";
+              "suspend" = "systemctl suspend";
+              "hibernate" = "systemctl hibernate";
+          };
         };
 
       };
@@ -146,8 +159,8 @@ in
       #network,
       #mode,
       #scratchpad {
-        margin-top: 2px;
-        margin-bottom: 2px;
+        margin-top: 1px;
+        margin-bottom: 1px;
         margin-left: 4px;
         margin-right: 4px;
         padding-left: 4px;
@@ -160,17 +173,14 @@ in
 
       #clock.date {
           color: @mauve;
-          border-bottom: 2px solid @mauve;
       }
 
       #pulseaudio {
           color: @blue;
-          border-bottom: 2px solid @blue;
       }
 
       #network {
           color: @yellow;
-          border-bottom: 2px solid @yellow;
       }
 
       #idle_inhibitor {
@@ -184,7 +194,6 @@ in
 
       #battery {
           color: @green;
-          border-bottom: 2px solid @green;
       }
 
       #custom-vpn {
@@ -229,6 +238,38 @@ in
       flamingo = "#f2cdcd";
       rosewater = "#f5e0dc";
     };
+
+    "waybar/power_menu.xml".text = ''
+      <?xml version="1.0" encoding="UTF-8"?>
+      <interface>
+        <object class="GtkMenu" id="menu">
+          <child>
+              <object class="GtkMenuItem" id="suspend">
+                  <property name="label">Suspend</property>
+              </object>
+          </child>
+          <child>
+              <object class="GtkMenuItem" id="hibernate">
+                  <property name="label">Hibernate</property>
+              </object>
+          </child>
+          <child>
+              <object class="GtkMenuItem" id="shutdown">
+                  <property name="label">Shutdown</property>
+              </object>
+          </child>
+          <child>
+            <object class="GtkSeparatorMenuItem" id="delimiter1"/>
+          </child>
+          <child>
+              <object class="GtkMenuItem" id="reboot">
+                  <property name="label">Reboot</property>
+              </object>
+          </child>
+        </object>
+      </interface>
+    '';
   };
+
 }
 

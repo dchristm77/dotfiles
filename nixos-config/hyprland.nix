@@ -174,6 +174,8 @@
       bindel = [
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ", XF86monbrightnessup, exec, brightnessctl set 10%+"
+        ", XF86monbrightnessdown, exec, brightnessctl set 10%-"
       ];
 
       bindl = [

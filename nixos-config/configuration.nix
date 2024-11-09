@@ -66,6 +66,8 @@
     wget
     git
     clipboard-jh
+    neovim
+    stow
   ];
 
   fonts.enableDefaultPackages = true;
