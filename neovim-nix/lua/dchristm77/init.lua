@@ -5,6 +5,7 @@ require('lze').register_handlers(require('lze.x'))
 
 require('lze').load {
     { import = 'dchristm77.plugins.colortheme', },
+    { import = 'dchristm77.plugins.neotree', },
 }
 
 

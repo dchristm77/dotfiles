@@ -113,6 +113,9 @@
 	  vim-repeat
 	  plenary-nvim
           catppuccin-nvim
+	  neo-tree-nvim
+	  nvim-web-devicons
+	  nui-nvim
 	];
       };
 

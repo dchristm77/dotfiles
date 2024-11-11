@@ -1,6 +1,6 @@
 return {
-  'nvim-neo-tree/neo-tree.nvim',
-  branch = 'v3.x',
+	{
+  'neo-tree-nvim',
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons',
@@ -312,4 +312,5 @@ return {
     vim.keymap.set('n', '<leader>e', ':Neotree toggle position=left<CR>', { noremap = true, silent = true }) -- focus file explorer
     vim.keymap.set('n', '<leader>ngs', ':Neotree float git_status<CR>', { noremap = true, silent = true }) -- open git status window
   end,
+	},
 }
